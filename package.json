@@ -1,0 +1,26 @@
+{
+  "name": "tongarirocinemas-react",
+  "version": "1.0.0",
+  "description": "Tongariro Cinemas Responsive React Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "start": "parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+  },
+  "author": "Hugh Lilly <20220344@mywhitecliffe.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "parcel": "^2.7.0",
+    "prettier": "^2.7.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
