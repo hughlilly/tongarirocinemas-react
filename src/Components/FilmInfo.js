@@ -46,7 +46,7 @@ function FilmInfo(props) {
           width={356}
         />
       </div>
-      <div className="trailer-imdb mx-10 space-x-5 space-y-5 pt-6 md:space-y-0 md:pt-0 flex flex-col items-center md:flex-row">
+      <div className="trailer-imdb mx-10 md:space-x-4 space-y-5 pt-6 md:space-y-0 md:pt-0 flex flex-col items-center md:flex-row">
         <span className="imdb">
           <a
             href={`https://www.imdb.com/title/tt${props.imdbID}`}
