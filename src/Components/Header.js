@@ -16,15 +16,7 @@ function Header() {
           {/* Flex container */}
           <div className="flex place-items-center justify-between">
             {/* Logo & wordmark */}
-            <Link
-              to="/"
-              className="no-underline"
-              onClick={() => {
-                setMobileMenuVisibility(false);
-                const hamBtn = document.getElementById("hamburger-button");
-                hamBtn.classList.toggle("open");
-              }}
-            >
+            <Link to="/" className="no-underline">
               <div id="logo-wordmark">
                 <div id="logo" className="flex space-x-4">
                   <img
