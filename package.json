@@ -2,25 +2,36 @@
   "name": "tongarirocinemas-react",
   "version": "1.0.0",
   "description": "Tongariro Cinemas Responsive React Website",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "start": "parcel src/index.html",
+    "start": "parcel",
+    "build": "parcel build",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "watch": "npx tailwindcss -i ./src/styles/main.css -o ./dist/output.css --watch",
+    "build:tw": "npx tailwindcss -i ./src/styles/main.css -o ./dist/output.css"
   },
   "author": "Hugh Lilly <20220344@mywhitecliffe.com>",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "react-refresh": "^0.14.0",
+    "react-router-dom": "^6.4.0",
+    "tailwindcss": "^3.1.8"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ]
 }

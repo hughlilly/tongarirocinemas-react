@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hamburger Menu */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  padding: 1px;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 1.5px;
+  background: #2e2e2e;
+}
+
+.hamburger-top {
+  /* transform: translateY(2px); */
+}
+
+.hamburger-middle {
+  transform: translateY(8px);
+}
+
+.hamburger-bottom {
+  transform: translateY(16px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(8px) translate(8px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(8px) translate(-8px);
+}
+
+/* TODO: Move these into Tailwind classes */
+/* IMDb links */
+
+.imdb-link {
+  background-color: rgb(245, 197, 24);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #000;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* "Play trailer" buttons */
+
+.trailer-button {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px lightgrey solid;
+}
+
+/* Trailer modals */
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+/* Tickets page: add "$" and &thinsp; (U+2009) before amount */
+.price::before {
+  content: "$\2009";
+}

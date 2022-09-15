@@ -4,12 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Tongariro Cinemas Ltd.</title>
+
+    <title>Tongariro Cinemas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <!-- Carousel adapted from https://www.tailwindtoolbox.com/components/carousel -->
+    <style>
+      .carousel-open:checked + .carousel-item {
+        position: static;
+        opacity: 100;
+      }
+
+      #carousel-1:checked ~ .control-1,
+      #carousel-2:checked ~ .control-2,
+      #carousel-3:checked ~ .control-3,
+      #carousel-4:checked ~ .control-4 {
+        display: block;
+      }
+
+      .carousel-indicators {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 6%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #carousel-1:checked
+        ~ .control-1
+        ~ .carousel-indicators
+        li:nth-child(1)
+        .carousel-bullet,
+      #carousel-2:checked
+        ~ .control-2
+        ~ .carousel-indicators
+        li:nth-child(2)
+        .carousel-bullet,
+      #carousel-3:checked
+        ~ .control-3
+        ~ .carousel-indicators
+        li:nth-child(3)
+        .carousel-bullet,
+      #carousel-4:checked
+        ~ .control-4
+        ~ .carousel-indicators
+        li:nth-child(4)
+        .carousel-bullet {
+        color: #2b6cb0;
+        /* TODO: Use variable for colour --  same as hover state for nav links? */
+      }
+    </style>
   </head>
-  <body>
+
+  <body class="bg-white font-sans leading-normal tracking-normal min-h-screen">
     <div id="root">not rendered</div>
-    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
     <script src="./App.js" type="module"></script>
   </body>
 </html>
