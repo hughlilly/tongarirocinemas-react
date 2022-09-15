@@ -1,3 +1,7 @@
+// Import the FilmInfo Component
+import FilmInfo from "./FilmInfo";
+
+// Import images
 import NowPlayingIcon from "../assets/logos_icons/playing.svg";
 import TwelveAngryMenStill from "../assets/stills/12angrymen.jpg";
 import PsychoStill from "../assets/stills/psycho.jpg";
@@ -5,8 +9,8 @@ import RearWindowStill from "../assets/stills/rear-window.jpg";
 import VertigoStill from "../assets/stills/vertigo.jpg";
 import SevenSamuraiStill from "../assets/stills/samurai.jpg";
 
-import FilmInfo from "./FilmInfo";
-
+// This array stores the data about each film, and uses the images imported above
+// TODO: Add more films, and paginate through them
 const filmData = [
   {
     id: 0,
@@ -69,21 +73,11 @@ function NowPlaying() {
         alt="Now Playing"
         className="h-[96px] w-[96px] m-auto"
       />
-
-      <FilmInfo {...filmData[0]} />
-      <hr width="65%" className="m-auto" />
-
-      <FilmInfo {...filmData[1]} />
-      <hr width="65%" className="m-auto" />
-
-      <FilmInfo {...filmData[2]} />
-      <hr width="65%" className="m-auto" />
-
-      <FilmInfo {...filmData[3]} />
-      <hr width="65%" className="m-auto" />
-
-      <FilmInfo {...filmData[4]} />
-      <hr width="65%" className="m-auto" />
+      {/* Map over the `filmData` array, creating a `FilmInfo` component for each object */}
+      {filmData.map((film) => {
+        // Set the key to "film0", etc., and use the spread operator to send all other key-value pairs as props
+        return <FilmInfo key={"film" + film.id} {...film} />;
+      })}
     </main>
   );
 }

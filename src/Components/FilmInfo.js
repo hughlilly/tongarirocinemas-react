@@ -8,7 +8,8 @@ function FilmInfo(props) {
           {props.title}
         </h3>
         <div className="film-metadata text-sm text-center">
-          Directed by {props.director} · {props.releaseYear} · {props.runtime}
+          Directed by {props.director} &bull; {props.releaseYear} &bull;{" "}
+          {props.runtime}
           &nbsp; mins.
         </div>
       </div>
@@ -16,7 +17,7 @@ function FilmInfo(props) {
         <p className="synopsis mx-5 my-auto md:mr-10">{props.synopsis}</p>
         <img
           src={props.filmStill}
-          alt="Still from the film ${props.title}"
+          alt={`Still from the film ${props.title} (${props.releaseYear})`}
           className="film-still max-w-[356px] max-h-[200px] self-center mb-5 md:mb-0 md:mr-5"
           height={200}
           width={356}
@@ -40,6 +41,7 @@ function FilmInfo(props) {
           &#9658;&nbsp;Play trailer
         </div>
       </div>
+      <hr width="65%" className="m-auto" />
     </article>
   );
 }
