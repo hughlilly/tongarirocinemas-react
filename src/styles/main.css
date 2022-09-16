@@ -9,7 +9,7 @@
   width: 24px;
   height: 24px;
   position: relative;
-  padding: 1px;
+  /* padding: 1px; */
 }
 
 .hamburger-top,
@@ -21,10 +21,6 @@
   width: 24px;
   height: 1.5px;
   background: #2e2e2e;
-}
-
-.hamburger-top {
-  /* transform: translateY(2px); */
 }
 
 .hamburger-middle {
@@ -56,20 +52,25 @@
 /* IMDb links */
 
 .imdb-link {
-  background-color: rgb(245, 197, 24);
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  color: #000;
+  color: #0c0b00;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
+  background-color: #f5c518;
+  padding: 0.5rem 1rem;
+  border: 1px #d3d3d3 solid;
+  border-radius: 1rem;
+}
+
+.imdb-link:hover {
+  background-color: #e2b617;
 }
 
 /* "Play trailer" buttons */
 
 .trailer-button {
-  background: red;
+  background-color: #ee2211;
   color: white;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -77,9 +78,19 @@
   border: 1px lightgrey solid;
 }
 
+.trailer-button:hover {
+  background-color: #c60313;
+}
+
 /* Trailer modals */
 .modal::backdrop {
-  background: rgb(0 0 0 / 0.4);
+  background: rgb(0 0 0 / 0.8);
+}
+
+/* When a modal is open, this class is added to the <body> element,
+   preventing scrolling */
+.modal-open {
+  overflow: hidden;
 }
 
 /* Tickets page: add "$" and &thinsp; (U+2009) before amount */
