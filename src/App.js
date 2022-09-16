@@ -30,4 +30,5 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("root"));
+const appRootElement = document.getElementById("app-root");
+render(<App />, appRootElement);
