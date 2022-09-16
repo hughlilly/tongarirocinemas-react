@@ -1,3 +1,5 @@
+import TrailerButton from "./TrailerButton";
+
 // Calculate runtime in human-understandable "hours and minutes" phrasing
 function toHoursAndMins(runtimeMins) {
   // Calculate number of whole hours in runtime
@@ -49,7 +51,7 @@ function FilmInfo(props) {
       <div className="trailer-imdb mx-10 md:space-x-4 space-y-5 pt-6 md:space-y-0 md:pt-0 flex flex-col items-center md:flex-row">
         <span className="imdb">
           <a
-            href={`https://www.imdb.com/title/tt${props.imdbID}`}
+            href={`https://www.imdb.com/title/tt${props.IMDbID}`}
             className="imdb-link"
             target="_blank"
             rel="noreferrer"
@@ -57,12 +59,11 @@ function FilmInfo(props) {
             IMDb
           </a>
         </span>
-        <span
-          className="trailer-button flex flex-row cursor-pointer hover:text-black"
-          data-videoid="DTJQfFQ40lI"
-        >
-          &#9658;&nbsp;Play trailer
-        </span>
+        <TrailerButton
+          key={"trailerButtonForFilm" + props.id}
+          filmID={props.id}
+          trailerID={props.trailerID}
+        />
       </div>
       <hr width="65%" className="mx-auto my-10" />
     </article>
