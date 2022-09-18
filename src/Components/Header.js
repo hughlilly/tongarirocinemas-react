@@ -63,7 +63,7 @@ function Header() {
             </button>
           </div>
         </div>
-        {/* Mobile menu — rendered conditionally: added to DOM only upon hamburger button click */}
+        {/* Mobile menu. Rendered conditionally: added to DOM only upon hamburger-button click */}
         {mobileMenuVisible && (
           <div
             id="mobile-menu"
