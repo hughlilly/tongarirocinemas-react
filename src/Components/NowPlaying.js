@@ -24,7 +24,7 @@ function NowPlaying() {
           </Fragment>
         ) : (
           // Else, for the final object in the array, return just the FilmInfo component
-          <FilmInfo {...film} key={"film" + film.id} />
+          <FilmInfo {...film} key={"FilmInfoSection" + film.id} />
         );
       })}
     </main>
