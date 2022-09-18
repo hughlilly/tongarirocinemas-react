@@ -11,24 +11,26 @@ import About from "./Components/About";
 import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
 
-const App = () => {
+function App() {
   return (
     <React.StrictMode>
       <Router>
         <Header />
         <Routes>
+          {/* Paths for the home page and all other Component pages */}
           <Route path="/" element={<Home />} />
           <Route path="/now-playing" element={<NowPlaying />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/rewards" element={<Rewards />} />
           <Route path="/about" element={<About />} />
+          {/* Display the "NotFound" component if the requested path does not match any of the above specified routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
     </React.StrictMode>
   );
-};
+}
 
 const appRootElement = document.getElementById("app-root");
 render(<App />, appRootElement);
