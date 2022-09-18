@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import logo from "../assets/logos_icons/logo.svg";
-import { Link } from "react-router-dom";
+import { Link as NavLink } from "react-router-dom";
 
 function Header() {
   // Use useState hook to set visibility of mobile menu
@@ -16,7 +16,7 @@ function Header() {
           {/* Flex container */}
           <div className="flex place-items-center justify-between">
             {/* Logo & wordmark */}
-            <Link to="/" className="no-underline">
+            <NavLink to="/" className="no-underline">
               <div id="logo-wordmark">
                 <div id="logo" className="flex space-x-4">
                   <img
@@ -32,33 +32,33 @@ function Header() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </NavLink>
             {/* Tablet and desktop menu */}
             <div id="nav-menu" className="hidden md:flex space-x-6">
-              <Link
+              <NavLink
                 to="/now-playing"
                 className="hover:text-blue-800 hover:underline hover:underline-offset-4"
               >
                 Now Playing
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/tickets"
                 className="hover:text-blue-800 hover:underline hover:underline-offset-4"
               >
                 Tickets
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/rewards"
                 className="hover:text-blue-800 hover:underline hover:underline-offset-4"
               >
                 Rewards
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/about"
                 className="hover:text-blue-800 hover:underline hover:underline-offset-4"
               >
                 About Us
-              </Link>
+              </NavLink>
             </div>
             {/* Hamburger button */}
             <button
@@ -81,10 +81,10 @@ function Header() {
             id="mobile-menu"
             className="my-8 mx-20 flex flex-col items-center self-end py-8 space-y-4 sm:w-auto sm:self-center border"
           >
-            <Link to="/now-playing">Now Playing</Link>
-            <Link to="/tickets">Tickets</Link>
-            <Link to="/rewards">Rewards</Link>
-            <Link to="/about">About Us</Link>
+            <NavLink to="/now-playing">Now Playing</NavLink>
+            <NavLink to="/tickets">Tickets</NavLink>
+            <NavLink to="/rewards">Rewards</NavLink>
+            <NavLink to="/about">About Us</NavLink>
           </div>
         )}
       </nav>

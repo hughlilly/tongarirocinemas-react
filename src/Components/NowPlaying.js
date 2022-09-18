@@ -84,10 +84,9 @@ function NowPlaying() {
         className="h-[96px] w-[96px] m-auto"
       />
       {/* Map over the `filmData` array, creating a `FilmInfo` component for each object */}
-      {filmData.map((film) => (
-        // Map over each item in the array, sending "film0" etc. as ID, and every other element using the spread operator (...)
-        <FilmInfo key={"film" + film.id} {...film} />
-      ))}
+      {filmData.map((film) => {
+        return <FilmInfo {...film} key={"film" + film.id} />;
+      })}
     </main>
   );
 }

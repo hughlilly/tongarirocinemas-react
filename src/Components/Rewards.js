@@ -1,4 +1,5 @@
 import MemberIcon from "../assets/logos_icons/member.svg";
+import { benefitsList } from "../Data";
 
 function Rewards() {
   return (
@@ -17,14 +18,12 @@ function Rewards() {
           Join our rewards programme and start saving today. Benefits include:
         </p>
         <ul id="benefit-list" className="list-decimal mx-20">
-          <li className="benefit">
-            10% off your first ticket purchase over $50
-          </li>
-          <li className="benefit">Free entry to the museum on Saturdays</li>
-          <li className="benefit">One free coffee at the café</li>
-          <li className="benefit">
-            A free ticket to any screening on your birthday
-          </li>
+          {/* Map over the list of benefits and produce an <li> element for each */}
+          {benefitsList.map((benefit) => (
+            <li className="benefit" key={benefit.id}>
+              {benefit.text}
+            </li>
+          ))}
         </ul>
         <p />
         <p className="p-8">

@@ -1,12 +1,6 @@
+// Import icon and ticket-related data
 import TicketIcon from "../assets/logos_icons/ticket.svg";
-
-// Set prices
-const ADULT_PRICE = 18;
-const CHILD_PRICE = 14.5;
-const CONC_PRICE = 11.5;
-
-// Set maximum number of tickets allowed to calculate
-const MAX_TICKET_COUNT = 10;
+import { MAX_TICKET_COUNT, ticketPrices } from "../Data";
 
 function Tickets() {
   return (
@@ -24,7 +18,7 @@ function Tickets() {
       </div>
       <div className="ticket-chooser text-center md:text-left grid md:grid-cols-3 grid-rows-4 gap-2 md:gap-7 border mx-20 p-5">
         <div className="ticket-type">Adult</div>
-        <div className="price">{ADULT_PRICE.toFixed(2)}</div>
+        <div className="price">{ticketPrices.adult.toFixed(2)}</div>
         <div className="ticket-quantity flex flex-row justify-center space-x-5 border rounded-md mx-28 sm:mx-10">
           <button className="decrease" data-count-name="adult">
             &minus;
@@ -37,7 +31,7 @@ function Tickets() {
           </button>
         </div>
         <div className="ticket-type">Child</div>
-        <div className="price">{CHILD_PRICE.toFixed(2)}</div>
+        <div className="price">{ticketPrices.child.toFixed(2)}</div>
         <div className="ticket-quantity flex flex-row justify-center space-x-5 border rounded-md mx-28 sm:mx-10">
           <button className="decrease" data-count-name="child">
             &minus;
@@ -50,7 +44,7 @@ function Tickets() {
           </button>
         </div>
         <div className="ticket-type">Concession</div>
-        <div className="price">{CONC_PRICE.toFixed(2)}</div>
+        <div className="price">{ticketPrices.concession.toFixed(2)}</div>
         <div className="ticket-quantity flex flex-row justify-center space-x-5 border rounded-md mx-28 sm:mx-10">
           <button className="decrease" data-count-name="conc">
             &minus;

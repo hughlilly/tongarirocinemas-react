@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TrailerModal from "./TrailerModal";
 
-function TrailerButton({ trailerID, filmID }) {
+function TrailerButton({ trailerID }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -29,7 +29,6 @@ function TrailerButton({ trailerID, filmID }) {
           );
           setModalOpen(false);
         }}
-        key={"trailerForFilm" + filmID}
       />
     </>
   );

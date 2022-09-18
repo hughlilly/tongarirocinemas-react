@@ -35,7 +35,6 @@ function TrailerModal({ trailerID, modalOpen, closeModal }) {
           height="100%"
           // Setting `enablejsapi` to 1 (true) allows us to pause the video on close; see
           // https://developers.google.com/youtube/player_parameters
-          // src={`https://www.youtube.com/embed/${trailerID}?autoplay=1&enablejsapi=1`}
           src={`https://www.youtube.com/embed/${trailerID}?&enablejsapi=1`}
           title="YouTube video player"
           frameBorder="0"

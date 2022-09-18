@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
+import { Fragment } from "react";
+
+// Import HomeSection component, and data to send down
+import HomeSection from "./HomeSection";
+import { homeSectionsData } from "../Data";
+
+// Import images for carousel
 import vertigoCarouselImage from "../assets/carousel/Vertigo.jpg";
 import streetcarCarouselImage from "../assets/carousel/Streetcar.jpg";
 import sunsetBlvdCarouselImage from "../assets/carousel/Sunset.jpg";
 import rearWindowCarouselImage from "../assets/carousel/RearWindow.jpg";
-
-import nowPlayingIcon from "../assets/logos_icons/playing.svg";
-import ticketIcon from "../assets/logos_icons/ticket.svg";
-import memberIcon from "../assets/logos_icons/member.svg";
-import aboutIcon from "../assets/logos_icons/about.svg";
 
 function Home() {
   return (
@@ -155,77 +156,28 @@ function Home() {
           </div>
         </div>
       </section>
-
+      {/* Sections */}
       <main className="m-auto md:px-14 max-w-4xl text-center md:text-left flex flex-col space-y-10 md:space-y-20 pt-16 first-of-type:md:pt-24 pb-28 last-of-type:md:pb-36">
-        {/* Now Playing section */}
-        <section id="now-playing">
-          <Link to="/now-playing">
-            <h1 className="text-xl md:pl-4">Now Playing</h1>
-            <div className="flex flex-col-reverse md:flex-row">
-              <div className="px-4 pt-5">
-                See a list of films currently playing.
-              </div>
-              <img
-                src={nowPlayingIcon}
-                alt="View currently playing films"
-                className="flex flex-row align-middle h-16 m-auto md:px-9 md:mr-0 pt-4 md:pt-0"
-              />
-            </div>
-          </Link>
-        </section>
-        <hr width="65%" className="m-auto" />
-        {/* Tickets section */}
-        <section id="tickets">
-          <Link to="/tickets">
-            <h1 className="text-xl md:pl-4">Tickets</h1>
-            <div className="flex flex-col-reverse md:flex-row">
-              <div className="px-4 pt-5">
-                View available seats and buy tickets to upcoming screenings.
-              </div>
-              <img
-                src={ticketIcon}
-                alt="View available seats and buy tickets to upcoming screenings"
-                className="flex flex-row align-middle h-16 m-auto md:px-9 md:mr-0 pt-4 md:pt-0"
-              />
-            </div>
-          </Link>
-        </section>
-        <hr width="65%" className="m-auto" />
-        {/* Rewards section */}
-        <section id="rewards">
-          <Link to="/rewards">
-            <h1 className="text-xl md:pl-4">Rewards</h1>
-            <div className="flex flex-col-reverse md:flex-row">
-              <div className="px-4 pt-5">
-                Join our rewards programme and start saving today! <br />
-                10% off your first ticket purchase over $50.
-              </div>
-              <img
-                src={memberIcon}
-                alt="Click here to sign up for our rewards programme"
-                className="flex flex-row align-middle h-16 m-auto md:px-9 md:mr-0 pt-4 md:pt-0"
-              />
-            </div>
-          </Link>
-        </section>
-        <hr width="65%" className="m-auto" />
-        {/* About section */}
-        <section id="about">
-          <Link to="/about">
-            <h1 className="text-xl md:pl-4">About</h1>
-            <div className="flex flex-col-reverse md:flex-row">
-              <div className="px-4 pt-5">
-                Read about the history of Tongariro Cinemas, our museum, and
-                café.
-              </div>
-              <img
-                src={aboutIcon}
-                alt="Read about the history of Tongariro Cinemas, our museum, and café"
-                className="flex flex-row align-middle h-16 m-auto md:px-9 md:mr-0 pt-6 md:pt-0"
-              />
-            </div>
-          </Link>
-        </section>
+        {homeSectionsData.map((section, index) => {
+          // If we are not yet at the last element, render a horizontal rule between HomeSection components
+          // Give every element a unique
+          if (index < homeSectionsData.length - 1) {
+            return (
+              <Fragment key={"Fragment" + section.id}>
+                <HomeSection {...section} key={"HomeSection" + section.id} />
+                <hr
+                  width="65%"
+                  className="mx-auto my-10"
+                  key={"HorizontalRule" + section.id}
+                />
+              </Fragment>
+            );
+          } else {
+            return (
+              <HomeSection {...section} key={"HomeSection" + section.id} />
+            );
+          }
+        })}
       </main>
     </div>
   );
