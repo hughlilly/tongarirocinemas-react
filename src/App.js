@@ -9,23 +9,23 @@ import Tickets from "./Components/Tickets";
 import Rewards from "./Components/Rewards";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
+import NotFound from "./NotFound";
 
 const App = () => {
   return (
     <React.StrictMode>
-      <React.Fragment>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/now-playing" element={<NowPlaying />} />
-            <Route path="/tickets" element={<Tickets />} />
-            <Route path="/rewards" element={<Rewards />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </React.Fragment>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/now-playing" element={<NowPlaying />} />
+          <Route path="/tickets" element={<Tickets />} />
+          <Route path="/rewards" element={<Rewards />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
     </React.StrictMode>
   );
 };
