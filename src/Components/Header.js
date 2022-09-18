@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link as NavLink } from "react-router-dom";
 
 import logo from "../assets/logos_icons/logo.svg";
-import { sections } from "../Data/Data";
+import { sections } from "../Data/AppData";
 import NavElement from "./NavElement";
 
 function Header() {

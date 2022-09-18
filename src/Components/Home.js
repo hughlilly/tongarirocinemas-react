@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 // Import HomeSection component, and data to send down
 import HomeSection from "./HomeSection";
-import { sections } from "../Data/Data";
+import { sections } from "../Data/AppData";
 
 function Home() {
   return (
