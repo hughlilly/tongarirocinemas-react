@@ -7,7 +7,7 @@ import { sections } from "../Data/Data";
 
 function Home() {
   return (
-    <div>
+    <Fragment>
       {/* Carousel */}
       <Carousel />
       {/* Home page sections */}
@@ -33,7 +33,7 @@ function Home() {
           }
         })}
       </main>
-    </div>
+    </Fragment>
   );
 }
 
