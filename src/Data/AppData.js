@@ -1,6 +1,6 @@
 /*
  * Data for the app is stored here.
- * This file can be thought of like a rudimentary Content Management System (CMS).
+ * This file can be thought of like a rudimentary Content Management System.
  */
 
 // Info about each section — this controls the text of the navigation as well as the content on the Home page.
