@@ -1,6 +1,6 @@
 // Import icon and ticket-related data
 import TicketIcon from "../assets/logos_icons/ticket.svg";
-import { MAX_TICKET_COUNT, ticketPrices } from "../Data";
+import { MAX_TICKET_COUNT, ticketPrices } from "../Data/Data";
 
 function Tickets() {
   return (

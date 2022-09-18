@@ -1,5 +1,5 @@
 import MemberIcon from "../assets/logos_icons/member.svg";
-import { benefitsList } from "../Data";
+import { benefitsList } from "../Data/Data";
 
 function Rewards() {
   return (

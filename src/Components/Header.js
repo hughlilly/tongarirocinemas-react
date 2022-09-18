@@ -1,8 +1,11 @@
 // Header — used across all pages
 
 import React, { useState } from "react";
-import logo from "../assets/logos_icons/logo.svg";
 import { Link as NavLink } from "react-router-dom";
+
+import logo from "../assets/logos_icons/logo.svg";
+import { sections } from "../Data/Data";
+import NavElement from "./NavElement";
 
 function Header() {
   // Use useState hook to set visibility of mobile menu
@@ -35,30 +38,15 @@ function Header() {
             </NavLink>
             {/* Tablet and desktop menu */}
             <div id="nav-menu" className="hidden md:flex space-x-6">
-              <NavLink
-                to="/now-playing"
-                className="hover:text-blue-800 hover:underline hover:underline-offset-4"
-              >
-                Now Playing
-              </NavLink>
-              <NavLink
-                to="/tickets"
-                className="hover:text-blue-800 hover:underline hover:underline-offset-4"
-              >
-                Tickets
-              </NavLink>
-              <NavLink
-                to="/rewards"
-                className="hover:text-blue-800 hover:underline hover:underline-offset-4"
-              >
-                Rewards
-              </NavLink>
-              <NavLink
-                to="/about"
-                className="hover:text-blue-800 hover:underline hover:underline-offset-4"
-              >
-                About Us
-              </NavLink>
+              {/* Map over sections, creating mobile menu (with hover state on links) */}
+              {sections.map((section) => (
+                <NavElement
+                  destination={section.linkTo}
+                  name={section.headingName}
+                  key={section.id}
+                  isDecorated={true}
+                />
+              ))}
             </div>
             {/* Hamburger button */}
             <button
@@ -81,10 +69,15 @@ function Header() {
             id="mobile-menu"
             className="my-8 mx-20 flex flex-col items-center self-end py-8 space-y-4 sm:w-auto sm:self-center border"
           >
-            <NavLink to="/now-playing">Now Playing</NavLink>
-            <NavLink to="/tickets">Tickets</NavLink>
-            <NavLink to="/rewards">Rewards</NavLink>
-            <NavLink to="/about">About Us</NavLink>
+            {/* Map over sections, creating mobile menu (no hover state on links) */}
+            {sections.map((section) => (
+              <NavElement
+                destination={section.linkTo}
+                name={section.headingName}
+                key={section.id}
+                isDecorated={false}
+              />
+            ))}
           </div>
         )}
       </nav>

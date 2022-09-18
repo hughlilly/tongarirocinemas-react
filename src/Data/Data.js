@@ -1,42 +1,45 @@
 /*
  * Data for the app is stored here.
- *
+ * This file can be thought of like a rudimentary Content Management System (CMS).
  */
 
-import nowPlayingIcon from "./assets/logos_icons/playing.svg";
-import ticketsIcon from "./assets/logos_icons/ticket.svg";
-import memberIcon from "./assets/logos_icons/member.svg";
-import aboutIcon from "./assets/logos_icons/about.svg";
+// Info about each section — this controls the text of the navigation as well as the content on the Home page.
+// Images for each section on the Home page
+import nowPlayingIcon from "../assets/logos_icons/playing.svg";
+import ticketsIcon from "../assets/logos_icons/ticket.svg";
+import memberIcon from "../assets/logos_icons/member.svg";
+import aboutIcon from "../assets/logos_icons/about.svg";
 
-const homeSectionsData = [
+// Each section has an id, a heading, a destination (linkTo), some display text, an icon, and alt text for the icon.
+const sections = [
   {
-    id: "now-playing",
+    id: 0,
+    headingName: "Now Playing",
     linkTo: "now-playing/",
-    headingText: "Now Playing",
     text: "See a list of films currently playing.",
     icon: nowPlayingIcon,
     altText: "View currently playing films",
   },
   {
-    id: "tickets",
+    id: 1,
+    headingName: "Tickets",
     linkTo: "tickets/",
-    headingText: "Tickets",
     text: "View available seats and buy tickets to upcoming screenings.",
     icon: ticketsIcon,
     altText: "View available seats and buy tickets to upcoming screenings",
   },
   {
-    id: "rewards",
+    id: 2,
+    headingName: "Rewards",
     linkTo: "rewards/",
-    headingText: "Rewards",
     text: `Join our rewards programme and start saving today! 10% off your first ticket purchase over $50.`,
     icon: memberIcon,
     altText: "Click here to sign up for our rewards programme",
   },
   {
-    id: "About",
-    linkTo: "About/",
-    headingText: "About",
+    id: 3,
+    headingName: "About",
+    linkTo: "about/",
     text: "Read about the history of Tongariro Cinemas, our museum, and café.",
     icon: aboutIcon,
     altText:
@@ -44,7 +47,7 @@ const homeSectionsData = [
   },
 ];
 
-// Set prices
+// Price data -- used at /tickets
 const ticketPrices = {
   adult: 18,
   child: 14.5,
@@ -54,12 +57,7 @@ const ticketPrices = {
 // Set maximum number of tickets allowed to calculate
 const MAX_TICKET_COUNT = 10;
 
-/*
- *
- *
- */
-
-// List of benefits (see Rewards and Benefits component)
+// List of benefits -- used at /rewards
 const benefitsList = [
   {
     id: 0,
@@ -79,4 +77,4 @@ const benefitsList = [
   },
 ];
 
-export { homeSectionsData, ticketPrices, MAX_TICKET_COUNT, benefitsList };
+export { sections, ticketPrices, MAX_TICKET_COUNT, benefitsList };
