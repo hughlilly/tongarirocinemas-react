@@ -15,6 +15,7 @@ function App() {
   return (
     <React.StrictMode>
       <Router>
+        {/* Header before all routes */}
         <Header />
         <Routes>
           {/* Paths for the home page and all other Component pages */}
@@ -26,6 +27,7 @@ function App() {
           {/* Display the "NotFound" component if the requested path does not match any of the above specified routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* Footer after all routes */}
         <Footer />
       </Router>
     </React.StrictMode>
