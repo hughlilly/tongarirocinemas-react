@@ -17,7 +17,7 @@ function NowPlaying() {
       {filmData.map((film, index) => {
         // Render a horizontal rule between FilmInfo components (but not after the last one)
         // Give every major element, including invisible Fragments, a unique key
-        return index != filmData.length - 1 ? (
+        return index !== filmData.length - 1 ? (
           <Fragment key={"Fragment" + film.id}>
             <FilmInfo {...film} key={"FilmInfoSection" + film.id} />
             <hr width="65%" className="mx-auto my-10" />
