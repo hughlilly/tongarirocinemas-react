@@ -43,7 +43,7 @@ function Header() {
                 <NavElement
                   destination={section.linkTo}
                   name={section.headingName}
-                  key={section.id}
+                  key={"NavDesktop" + section.id}
                   isDecorated={true}
                 />
               ))}
@@ -74,7 +74,7 @@ function Header() {
               <NavElement
                 destination={section.linkTo}
                 name={section.headingName}
-                key={section.id}
+                key={"NavMobile" + section.id}
                 isDecorated={false}
               />
             ))}
