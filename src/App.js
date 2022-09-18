@@ -9,7 +9,7 @@ import Tickets from "./Components/Tickets";
 import Rewards from "./Components/Rewards";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
-import NotFound from "./NotFound";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
