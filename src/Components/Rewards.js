@@ -17,14 +17,14 @@ function Rewards() {
         <p className="p-8 mt-10">
           Join our rewards programme and start saving today. Benefits include:
         </p>
-        <ul id="benefit-list" className="list-decimal mx-20">
+        <ol id="benefit-list" className="list-decimal mx-16 md:mx-24">
           {/* Map over the list of benefits and produce an <li> element for each */}
           {benefitsList.map((benefit) => (
             <li className="benefit" key={benefit.id}>
               {benefit.text}
             </li>
           ))}
-        </ul>
+        </ol>
         <p />
         <p className="p-8">
           Sign up online by filling in your email address below and we&apos;ll
