@@ -16,8 +16,8 @@ function About() {
         <p className="pt-8">
           Tongariro Cinemas has a long and illustrious history in Aotearoa New
           Zealand. It was one of the first cinemas to screen{" "}
-          <span style={{ fontStyle: "italic" }}>Star Wars</span> in 1977, and
-          has had a café and historical museum attached since the early 1990s.
+          <span className="italic">Star Wars</span> in 1977, and has had a café
+          and historical museum attached since the early 1990s.
         </p>
         <p>
           We have recently begun a programme of improvements which includes this
