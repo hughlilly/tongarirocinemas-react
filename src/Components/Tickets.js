@@ -5,16 +5,19 @@ import { MAX_TICKET_COUNT, ticketPrices } from "../Data/AppData";
 
 // This function returns the markup for the /tickets route
 function Tickets() {
-  // Use the ticketPrices variahle from AppData.js as state
+  // Use the ticketPrices variable from AppData.js as state
   const [ticketObjects, setTicketObjects] = useState(ticketPrices);
 
-  // Sum the array using `reduce()`
+  // Sum the state array using `reduce()`
   // This calculates the total value of all tickets
-  const sum = ticketObjects.reduce((accumulator, ticket) => {
-    console.log(ticket);
-    return accumulator + ticket.count * ticket.price;
-  }, 0);
+  const sum = ticketObjects.reduce(
+    (accumulator, ticket) => accumulator + ticket.count * ticket.price,
+    0
+  );
 
+  // Run every time a "decrement" button is pushed
+  // Creates a new temporary object to assign to state
+  // Returns immediately if count is 0 -- no negative ticket counts allowed
   const decrementCounter = (ticket) => {
     if (ticket.count === 0) {
       return;
@@ -29,6 +32,9 @@ function Tickets() {
     setTicketObjects(newState);
   };
 
+  // Run every time an "increment" button is pushed
+  // Creates a new temporary object to assign to state
+  // Returns immediately if count is at limit -- no higher counts allowed
   const incrementCounter = (ticket) => {
     if (ticket.count === MAX_TICKET_COUNT) {
       return;
@@ -43,6 +49,7 @@ function Tickets() {
     setTicketObjects(newState);
   };
 
+  // Resets all counters by making a copy of the array and mapping over it
   const resetCounters = () => {
     const newState = ticketObjects.map((item) => {
       return { ...item, count: 0 };
