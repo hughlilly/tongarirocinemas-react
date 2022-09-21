@@ -48,11 +48,11 @@ const sections = [
 ];
 
 // Price data -- used at /tickets
-const ticketPrices = {
-  adult: 18,
-  child: 14.5,
-  concession: 11.5,
-};
+const ticketPrices = [
+  { id: 0, type: "Adult", price: 18, count: 0 },
+  { id: 1, type: "Child", price: 14.5, count: 0 },
+  { id: 2, type: "Concession", price: 11.5, count: 0 },
+];
 
 // Set maximum number of tickets allowed to calculate
 const MAX_TICKET_COUNT = 10;
