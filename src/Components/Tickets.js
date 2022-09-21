@@ -1,42 +1,53 @@
-// Import icon and ticket-related data
 import { useState } from "react";
+// Import icon and ticket-related data
 import TicketIcon from "../assets/logos_icons/ticket.svg";
 import { MAX_TICKET_COUNT, ticketPrices } from "../Data/AppData";
 
+// This function returns the markup for the /tickets route
 function Tickets() {
-  const [counters, setCounter] = useState(ticketPrices);
+  // Use the ticketPrices variahle from AppData.js as state
+  const [ticketObjects, setTicketObjects] = useState(ticketPrices);
 
-  const sum = ticketPrices.reduce(
-    (acc, ticketPrices) => acc + ticketPrices.count * ticketPrices.price,
-    0
-  );
+  // Sum the array using `reduce()`
+  // This calculates the total value of all tickets
+  const sum = ticketObjects.reduce((accumulator, ticket) => {
+    console.log(ticket);
+    return accumulator + ticket.count * ticket.price;
+  }, 0);
 
   const decrementCounter = (ticket) => {
     if (ticket.count === 0) {
       return;
     }
-    const newState = counters.map((counter) => {
-      if (counter.id === ticket.id) {
-        return { ...counter, count: ticket.count-- };
+    const newState = ticketObjects.map((item) => {
+      if (item.id === ticket.id) {
+        return { ...item, count: ticket.count - 1 };
       } else {
-        return counter;
+        return item;
       }
     });
-    setCounter(newState);
+    setTicketObjects(newState);
   };
 
   const incrementCounter = (ticket) => {
     if (ticket.count === MAX_TICKET_COUNT) {
       return;
     }
-    const newState = counters.map((counter) => {
-      if (counter.id === ticket.id) {
-        return { ...counter, count: ticket.count++ };
+    const newState = ticketObjects.map((item) => {
+      if (item.id === ticket.id) {
+        return { ...item, count: ticket.count + 1 };
       } else {
-        return counter;
+        return item;
       }
     });
-    setCounter(newState);
+    setTicketObjects(newState);
+  };
+
+  const resetCounters = () => {
+    const newState = ticketObjects.map((item) => {
+      return { ...item, count: 0 };
+    });
+    setTicketObjects(newState);
   };
 
   return (
@@ -53,39 +64,55 @@ function Tickets() {
         You may select a maximum of {MAX_TICKET_COUNT} tickets of each type.
       </div>
       <div className="ticket-chooser flex flex-col border mx-10 md:mx-36 py-10 space-y-14">
-        {ticketPrices.map((ticket) => (
-          <div
-            className="flex flex-col md:flex-row mx-20 text-center"
-            key={ticket.id}
-          >
-            <div className="ticket-type  w-1/3">{ticket.type}</div>
-            <div className="ticket-price w-1/3">
-              {"$" + ticket.price.toFixed(2)}
-            </div>
-            <div className="w-1/3 flex flex-row text-center">
-              <div className="button w-1/4">
+        {ticketObjects.map((ticket) => {
+          return (
+            <div
+              className="flex flex-col md:flex-row mx-20 text-center place-items-center md:place-items-start"
+              key={ticket.id}
+            >
+              <div className="ticket-type  sm:w-1/3 md:text-right">
+                {ticket.type}
+              </div>
+              <div className="ticket-price sm:w-1/3 md-text-left">
+                {"$" + ticket.price.toFixed(2)}
+              </div>
+
+              <div className="buttons-item flex flex-row text-center sm:w-1/4 md:ml-10 space-x-3">
                 <button
-                  className="decrement"
+                  className="button decrement sm:w-1/3"
                   onClick={() => decrementCounter(ticket)}
                 >
                   -
                 </button>
-              </div>
-              <div className="ticket-quantity"> {ticket.count} </div>
-              <div className="button w-1/4">
+                <div className="ticket-quantity sm:w-1/3"> {ticket.count} </div>
                 <button
-                  className="increment w-1/2"
+                  className="button increment sm:w-1/3"
                   onClick={() => incrementCounter(ticket)}
                 >
                   +
                 </button>
               </div>
             </div>
+          );
+        })}
+        <div className="flex flex-row mx-20">
+          <div className="spacer sm:w-1/3"></div>
+          <div className="spacer sm:w-1/3"></div>
+          <div className="reset-button flex sm:w-1/4 md:ml-10 space-x-3 m-auto text-center">
+            <div className="spacer sm:w-1/3"></div>
+            <button
+              className="reset sm:w-1/3"
+              type="reset"
+              onClick={resetCounters}
+            >
+              Reset
+            </button>
+            <div className="spacer sm:w-1/3"></div>
           </div>
-        ))}
-        <div className="flex flex-row mx-20 space-x-5">
-          <div className="w-2/3 uppercase font-bold text-right">Total</div>
-          <div className="w-1/3 text-center">${sum.toFixed(2)}</div>
+        </div>
+        <div className="flex flex-row mx-20 space-x-5 place-items-center">
+          <div className="flex-auto uppercase font-bold text-right">Total</div>
+          <div className="flex-auto">${sum.toFixed(2)}</div>
         </div>
       </div>
       <div className="text-sm px-20 md:px-52 text-center">
