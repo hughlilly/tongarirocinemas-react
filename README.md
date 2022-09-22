@@ -84,13 +84,13 @@ This creates a minifed build of the site along with all assets, which makes for 
 
 #### Serve locally
 
-To serve the built site locally, run:
+To serve the built site (i.e., the contents of the `dist` directory) locally, run:
 
 ```bash
 npm run serve
 ```
 
-NB: The site was built before distribution, so this command should be able to be run without creating a new build beforehand.
+NB: The site was built before submission, so this command should be able to be run without creating a new build.
 
 #### Other scripts
 
