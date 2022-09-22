@@ -50,6 +50,7 @@ function Tickets() {
   };
 
   // Resets all counters by making a copy of the array and mapping over it
+  // Creates a new temporary object to assign to state
   const resetCounters = () => {
     const newState = ticketObjects.map((item) => {
       return { ...item, count: 0 };
