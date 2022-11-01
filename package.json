@@ -5,9 +5,9 @@
   "homepage": "https://hughlilly.github.io/tongarirocinemas-react",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "npm run build:tw && parcel src/index.html --open",
     "prebuild": "rm -rf ./dist/",
-    "build": "npm run build:tw && parcel build src/index.html --dist-dir dist --no-source-maps --public-url ./",
+    "build": "npm run build:tw && parcel build src/index.html --dist-dir dist --no-source-maps --public-url /tongarirocinemas-react",
     "serve": "serve ./dist",
     "predeploy": "npm run build",
     "deploy": "gh-pages --dist dist",
