@@ -19,11 +19,14 @@ function App() {
         <Header />
         <Routes>
           {/* Paths for the home page and all other Component pages */}
-          <Route path="/" element={<Home />} />
-          <Route path="/now-playing" element={<NowPlaying />} />
-          <Route path="/tickets" element={<Tickets />} />
-          <Route path="/rewards" element={<Rewards />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/tongarirocinemas-react/" element={<Home />} />
+          <Route
+            path="/tongarirocinemas-react/now-playing"
+            element={<NowPlaying />}
+          />
+          <Route path="/tongarirocinemas-react/tickets" element={<Tickets />} />
+          <Route path="/tongarirocinemas-react/rewards" element={<Rewards />} />
+          <Route path="/tongarirocinemas-react/about" element={<About />} />
           {/* Display the "NotFound" component if the requested path does not match any of the above specified routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -15,7 +15,7 @@ const sections = [
   {
     id: 0,
     headingName: "Now Playing",
-    linkTo: "now-playing/",
+    linkTo: "now-playing",
     text: "See a list of films currently playing.",
     icon: nowPlayingIcon,
     altText: "View currently playing films",
@@ -23,7 +23,7 @@ const sections = [
   {
     id: 1,
     headingName: "Tickets",
-    linkTo: "tickets/",
+    linkTo: "tickets",
     text: "View available seats and buy tickets to upcoming screenings.",
     icon: ticketsIcon,
     altText: "View available seats and buy tickets to upcoming screenings",
@@ -31,7 +31,7 @@ const sections = [
   {
     id: 2,
     headingName: "Rewards",
-    linkTo: "rewards/",
+    linkTo: "rewards",
     text: `Join our rewards programme and start saving today! 10% off your first ticket purchase over $50.`,
     icon: memberIcon,
     altText: "Click here to sign up for our rewards programme",
@@ -39,7 +39,7 @@ const sections = [
   {
     id: 3,
     headingName: "About",
-    linkTo: "about/",
+    linkTo: "about",
     text: "Read about the history of Tongariro Cinemas, our museum, and café.",
     icon: aboutIcon,
     altText:

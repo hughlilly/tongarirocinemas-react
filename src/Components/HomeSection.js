@@ -5,7 +5,7 @@ function HomeSection(props) {
     <section id={props.id}>
       <h1 className="text-xl md:pl-4">
         <NavLink
-          to={props.linkTo}
+          to={"./" + props.linkTo}
           className="hover:text-blue-800 hover:underline hover:underline-offset-4"
         >
           {props.headingName}
