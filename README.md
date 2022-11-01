@@ -14,6 +14,7 @@
       - [Development server](#development-server)
       - [Build for distribution](#build-for-distribution)
       - [Serve locally](#serve-locally)
+      - [Deploying to GitHub Pages](#deploying-to-github-pages)
       - [Other scripts](#other-scripts)
   - [Contact](#contact)
 
@@ -91,6 +92,10 @@ npm run serve
 ```
 
 NB: The site was built before submission, so this command should be able to be run without creating a new build.
+
+#### Deploying to GitHub Pages
+
+Following the instructions at <https://github.com/gitname/react-gh-pages>, I've added gh-pages as a dev dependency, and a `deploy` script.
 
 #### Other scripts
 
