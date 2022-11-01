@@ -6,9 +6,10 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
+    "prebuild": "rm -rf ./dist/",
+    "build": "parcel build src/index.html --dist-dir dist --no-source-maps --public-url ./",
     "serve": "serve ./dist",
-    "predeploy": "parcel build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages --dist dist",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
