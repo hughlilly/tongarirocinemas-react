@@ -14,6 +14,7 @@
       - [Development server](#development-server)
       - [Build for distribution](#build-for-distribution)
       - [Serve locally](#serve-locally)
+      - [Deploying to GitHub Pages](#deploying-to-github-pages)
       - [Other scripts](#other-scripts)
   - [Contact](#contact)
 
@@ -91,6 +92,12 @@ npm run serve
 ```
 
 NB: The site was built before submission, so this command should be able to be run without creating a new build.
+
+#### Deploying to GitHub Pages
+
+Following the instructions at [react-gh-pages](https://github.com/gitname/react-gh-pages) and [spa-github-pages](https://github.com/rafgraph/spa-github-pages), I've added the `gh-pages` npm package as a dev dependency, and added a `deploy` script (and altered many other scr).
+
+(See also [Building relative paths into Parcel](https://github.com/parcel-bundler/parcel/issues/206).)
 
 #### Other scripts
 
