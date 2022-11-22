@@ -19,7 +19,7 @@ function Header() {
           {/* Flex container */}
           <div className="flex place-items-center justify-between">
             {/* Logo & wordmark */}
-            <NavLink to="/tongarirocinemas-react" className="no-underline">
+            <NavLink to="../" className="no-underline">
               <div id="logo-wordmark">
                 <div id="logo" className="flex space-x-4">
                   <img
@@ -41,7 +41,7 @@ function Header() {
               {/* Map over sections, creating mobile menu (with hover state on links) */}
               {sections.map((section) => (
                 <NavElement
-                  destination={"tongarirocinemas-react/" + section.linkTo}
+                  destination={"../" + section.linkTo}
                   name={section.headingName}
                   key={"NavDesktop" + section.id}
                   isDecorated={true}
