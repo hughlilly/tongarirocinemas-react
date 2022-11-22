@@ -5,16 +5,16 @@
   "homepage": "https://hughlilly.github.io/tongarirocinemas-react",
   "source": "src/index.html",
   "scripts": {
-    "start": "concurrently \"npm:css:dev\" \"parcel --open\"",
+    "start": "npm run watch:css && parcel src/index.html --open",
+    "watch:css": "tailwindcss -i src/styles/main.css -o dist/output.css --watch",
+    "build:css": "tailwindcss -i src/styles/main.css -o dist/output.css",
     "prebuild": "rm -rf ./dist/",
-    "build": "npm run css:build && parcel build --dist-dir dist --no-source-maps --public-url /tongarirocinemas-react",
+    "build": "npm run build:css && parcel build --dist-dir dist --no-source-maps --public-url /tongarirocinemas-react",
     "predeploy": "npm run build",
     "deploy": "gh-pages --dist dist",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "css:dev": "tailwindcss -w -i ./src/styles/main.css -o ./dist/output.css",
-    "css:build": "tailwindcss -i -m ./src/styles/main.css -o ./dist/output.css"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "author": "Hugh Lilly <20220344@mywhitecliffe.com>",
   "license": "MIT",
