@@ -1,30 +1,21 @@
+import { toHoursAndMins } from "./toHoursAndMins";
 import TrailerButton from "./TrailerButton";
-
-// Calculate runtime in human-understandable "hours and minutes" phrasing
-function toHoursAndMins(runtimeMins) {
-  // Calculate number of whole hours in runtime
-  const wholeHours = Math.floor(runtimeMins / 60);
-
-  // Calculate modulus of minutes (number of minutes left over after full hours calculated)
-  const remainderMins = runtimeMins % 60;
-
-  // Return whole hours, with "hour" singular if only one hour, "hours" plural if more than one, plus minutes
-  return (
-    wholeHours +
-    (wholeHours === 1 ? " hour " : " hours ") +
-    remainderMins +
-    " min."
-  );
-}
+import { Link } from "react-router-dom";
 
 function FilmInfo(props) {
+  const slug = props.title.toLowerCase().replaceAll(" ", "-");
   return (
     <article className="film-container">
-      <div className="film-data xs:pb-5 md:pb-6">
-        <h3 className="film-title text-2xl font-bold italic text-center pb-2">
-          {props.title}
-        </h3>
-        <div className="film-metadata text-sm text-center">
+      <div className="film-data xs:pb-5 md:pb-6 text-center">
+        <div id="film-title" className="pb-3 mx-auto">
+          <Link
+            to={slug}
+            className="film-title hover:underline hover:decoration-4 hover:underline-offset-2 text-2xl font-bold italic"
+          >
+            {props.title}
+          </Link>
+        </div>
+        <div className="film-metadata text-sm">
           Directed by {props.director}&nbsp;&bull;&nbsp;{props.releaseYear}
           &nbsp;&bull;&nbsp;{props.runtimeMins} min.
           {/* Conditionally render human-readable runtime if > 60 mins */}
@@ -39,6 +30,14 @@ function FilmInfo(props) {
       <div className="synopsis-image pb-5 flex flex-col-reverse md:flex-row pt-6">
         <p className="synopsis mx-8 sm:mx-24 md:mx-10 my-auto md:mr-10">
           {props.synopsis}
+          <br />
+          <br />
+          <Link
+            to={slug}
+            className="hover:underline hover:decoration-4 hover:underline-offset-2 font-bold italic pb-2"
+          >
+            Read more…
+          </Link>
         </p>
         <img
           src={props.filmStill}

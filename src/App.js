@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import NowPlaying from "./Components/NowPlaying";
+import FilmDetail from "./Components/FilmDetail";
 import Tickets from "./Components/Tickets";
 import Rewards from "./Components/Rewards";
 import About from "./Components/About";
@@ -21,6 +22,7 @@ function App() {
           {/* Paths for the home page and all other Component pages */}
           <Route path="/" element={<Home />} />
           <Route path="/now-playing" element={<NowPlaying />} />
+          <Route path="/now-playing/:title" element={<FilmDetail />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/rewards" element={<Rewards />} />
           <Route path="/about" element={<About />} />
