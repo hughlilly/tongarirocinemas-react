@@ -22,6 +22,7 @@ function App() {
           {/* Paths for the home page and all other Component pages */}
           <Route path="/" element={<Home />} />
           <Route path="/now-playing" element={<NowPlaying />} />
+          {/* Dynamic route for films (by title) */}
           <Route path="/now-playing/:title" element={<FilmDetail />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/rewards" element={<Rewards />} />
