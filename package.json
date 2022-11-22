@@ -5,20 +5,21 @@
   "homepage": "https://hughlilly.github.io/tongarirocinemas-react",
   "source": "src/index.html",
   "scripts": {
-    "start": "npm run build:tw && parcel src/index.html --open",
+    "start": "concurrently \"npm:css:dev\" \"parcel --open\"",
     "prebuild": "rm -rf ./dist/",
-    "build": "npm run build:tw && parcel build src/index.html --dist-dir dist --no-source-maps --public-url /tongarirocinemas-react",
+    "build": "npm run css:build && parcel build --dist-dir dist --no-source-maps --public-url /tongarirocinemas-react",
     "predeploy": "npm run build",
     "deploy": "gh-pages --dist dist",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "watch": "npx tailwindcss -i ./src/styles/main.css -o ./dist/output.css --watch",
-    "build:tw": "npx tailwindcss -i ./src/styles/main.css -o ./dist/output.css"
+    "css:dev": "tailwindcss -w -i ./src/styles/main.css -o ./dist/output.css",
+    "css:build": "tailwindcss -i -m ./src/styles/main.css -o ./dist/output.css"
   },
   "author": "Hugh Lilly <20220344@mywhitecliffe.com>",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
