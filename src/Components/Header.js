@@ -15,13 +15,13 @@ function Header() {
     <header>
       {/* Navigation bar, including logo and mobile menu */}
       <nav>
-        <div className="relative p-6 mx-auto my-3 md:mx-4 lg:mx-6 xl:mx-10">
+        <div className="relative p-4 sm:p-6 my-1 md:my-3 md:mx-4 lg:mx-6 xl:mx-10">
           {/* Flex container */}
           <div className="flex place-items-center justify-between">
             {/* Logo & wordmark */}
             <NavLink to="../" className="no-underline">
               <div id="logo-wordmark">
-                <div id="logo" className="flex space-x-4">
+                <div id="logo" className="flex space-x-1 md:space-x-4">
                   <img
                     src={logo}
                     alt="Tongariro Cinemas logo"
@@ -29,7 +29,7 @@ function Header() {
                   />
                   <div
                     id="wordmark"
-                    className="flex font-wordmark font-extrabold text-xl uppercase place-items-center"
+                    className="flex font-wordmark font-extrabold md:text-xl uppercase place-items-center"
                   >
                     Tongariro Cinemas
                   </div>
@@ -51,7 +51,7 @@ function Header() {
             {/* Hamburger button */}
             <button
               id="hamburger-button"
-              className="block hamburger md:hidden focus:outline-none"
+              className="block relative my-auto w-6 h-6 md:hidden focus:outline-none"
               onClick={(event) => {
                 setMobileMenuVisibility(!mobileMenuVisible);
                 event.currentTarget.classList.toggle("open");

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,23 +10,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap"
-      rel="stylesheet"
-    />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet" />
+    <link href="assets/styles/tailwind.css" rel="stylesheet" />
 
     <!-- Carousel adapted from https://www.tailwindtoolbox.com/components/carousel -->
     <style>
-      .carousel-open:checked + .carousel-item {
+      .carousel-open:checked+.carousel-item {
         position: static;
         opacity: 100;
       }
 
-      #carousel-1:checked ~ .control-1,
-      #carousel-2:checked ~ .control-2,
-      #carousel-3:checked ~ .control-3,
-      #carousel-4:checked ~ .control-4 {
+      #carousel-1:checked~.control-1,
+      #carousel-2:checked~.control-2,
+      #carousel-3:checked~.control-3,
+      #carousel-4:checked~.control-4 {
         display: block;
       }
 
@@ -41,39 +39,22 @@
         z-index: 10;
       }
 
-      #carousel-1:checked
-        ~ .control-1
-        ~ .carousel-indicators
-        li:nth-child(1)
-        .carousel-bullet,
-      #carousel-2:checked
-        ~ .control-2
-        ~ .carousel-indicators
-        li:nth-child(2)
-        .carousel-bullet,
-      #carousel-3:checked
-        ~ .control-3
-        ~ .carousel-indicators
-        li:nth-child(3)
-        .carousel-bullet,
-      #carousel-4:checked
-        ~ .control-4
-        ~ .carousel-indicators
-        li:nth-child(4)
-        .carousel-bullet {
+      #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+      #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+      #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet,
+      #carousel-4:checked~.control-4~.carousel-indicators li:nth-child(4) .carousel-bullet {
         color: #2b6cb0;
       }
+
     </style>
   </head>
 
   <body>
-    <div
-      id="app-root"
-      class="bg-white font-sans leading-normal tracking-normal min-h-screen"
-    >
+    <div id="app-root" class="bg-white font-sans leading-normal tracking-normal min-h-screen">
       (App not rendered.)
     </div>
     <div id="modal-root"></div>
     <script src="./App.js" type="module"></script>
   </body>
+
 </html>

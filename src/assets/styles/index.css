@@ -9,7 +9,6 @@
   width: 24px;
   height: 24px;
   position: relative;
-  /* padding: 1px; */
 }
 
 .hamburger-top,
@@ -32,8 +31,7 @@
 }
 
 .open {
-  transform: rotate(90deg);
-  transform: translateY(0px);
+  transform: rotate(90deg) translateY();
 }
 
 .open .hamburger-top {
